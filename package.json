@@ -1,0 +1,14 @@
+{
+  "author": "mklabs",
+  "name": "vim-issues",
+  "description": "Little Vim plugin to browse github issues",
+  "version": "0.1.0",
+  "repository": {
+    "url": "git://github.com/mklabs/vim-issues.git"
+  },
+  "dependencies": {
+    "nopt": "~1.0.10",
+    "request": "~2.9.202"
+  },
+  "main": "./lib/issues"
+}

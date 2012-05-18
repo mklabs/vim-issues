@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var nopt = require('nopt');
+
+var Issues = require('../');
+
+// create a new issue object, with raw cli options parsed from nopt
+var issues = new Issues(nopt());
+
+// reparse with commands aware shorthands and known options
+var opts = nopt({
+  command: Object.keys(issues._events)
+}, {
+  ls: ['-c', 'list'],
+  la: ['--ls'],
+  ll: ['--ls']
+});
+
+
+if(!opts.command) return;
+
+issues.on('error', function(err) {
+  process.stderr.write(JSON.stringify({
+    message: err.message,
+    stack: err.stack
+  }));
+  process.exit(err.code || 1);
+});
+
+
+issues[opts.command]();
+
