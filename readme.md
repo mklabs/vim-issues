@@ -2,7 +2,20 @@
 issues.vim
 ==========
 
-**Vim plugin to browse github issues**
+*issues.vim is a plugin to quickly navigate through issues of a GitHub repository*
+
+Preview
+-------
+
+View the quick [codestream intro](http://codestre.am/4fb5a3c8c643e79019018692)
+
+*quickfix window with a list of opened issues*
+
+![GhIssues command](https://raw.github.com/mklabs/vim-issues/master/doc/ghissues.png)
+
+*preview issue*
+
+![Preview](https://raw.github.com/mklabs/vim-issues/master/doc/issue-preview.png)
 
 Description
 -----------
@@ -44,7 +57,6 @@ What it does
 When editing a buffer within a git repo, running `:GhIssues` will open
 the quickfix window with the list of opened issues.
 
-![GhIssues command](https://raw.github.com/mklabs/vim-issues/master/doc/ghissues.png)
 
 Buffer specific mappings are available:
 
@@ -58,8 +70,6 @@ preview buffer, with extended informations about the given issue
 including issue body and loading comments if there are.
 
 The window is resized to maximum height by default.
-
-![Preview](https://raw.github.com/mklabs/vim-issues/master/doc/issue-preview.png)
 
 Same here, buffer specific mappings are defined:
 
