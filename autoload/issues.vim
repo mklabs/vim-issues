@@ -104,7 +104,7 @@ let s:qflist = []
 function! s:issues.list(...)
   let issues = self.exec(['--command', 'list'])
   let qflist = []
-  for issue in issues.issues
+  for issue in issues
     " ['labels', 'number', 'comments', 'updated_at', 'title', 'created_at',
     " 'user', 'gravatar_id', 'votes', 'state', 'position', 'body', 'html_url']
 
@@ -113,7 +113,7 @@ function! s:issues.list(...)
     " let qfitem.filename = issue.title
     " XXX pad titles & nums
     let qfitem.lnum = issue.number
-    let qfitem.text = issue.user . ' | ' . issue.title
+    let qfitem.text = issue.user.login . ' | ' . issue.title
 
     " non standard to qflist, just placed here for further use in preview
     let qfitem.issue = issue
@@ -189,7 +189,7 @@ function! s:InitPreview(line)
   let hint = 'Type q to close the preview - Type o the open this issue in your default browser'
   exe 'setlocal statusline=' . fnameescape(join([
     \ issue.title, 'Created: ' . issue.created_at,
-    \ 'Author: ' .  issue.user,
+    \ 'Author: ' .  issue.user.login,
     \ hint
   \ ], ' | '))
 
